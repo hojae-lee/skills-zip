@@ -73,8 +73,6 @@ description: CSS 작업 시 반드시 사용한다. 이 프로젝트는 CSS Casc
 
 **파일:** `apps/<app>/src/app/globals.css`
 
-앱 특화 one-off 유틸리티. 현재 ai-works에는 `hero-dot-grid`, `hero-brand-glow`가 있다.
-
 ```css
 @layer utilities {
   .hero-dot-grid {
@@ -99,7 +97,6 @@ description: CSS 작업 시 반드시 사용한다. 이 프로젝트는 CSS Casc
 `packages/ui/src/index.css`는 `@repo/ui/index.css`로 import한다.
 
 ```css
-/* apps/ai-works/src/app/globals.css */
 @import "@repo/ui/index.css";
 ```
 

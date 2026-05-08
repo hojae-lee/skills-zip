@@ -132,12 +132,12 @@ pnpm format
 pnpm test
 
 # 특정 앱만 실행
-pnpm --filter ai-works test
+pnpm --filter <app-name> test
 
 # watch 모드
-pnpm --filter ai-works test:watch
+pnpm --filter <app-name> test:watch
 
 # Turbo로 빌드 파이프라인 실행
 turbo run build
-turbo run lint test --filter=ai-works
+turbo run lint test --filter=<app-name>
 ```
