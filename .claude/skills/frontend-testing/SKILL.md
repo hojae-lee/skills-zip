@@ -251,15 +251,14 @@ afterEach(() => {
 
 ```typescript
 // 커스텀 render가 없을 때 직접 wrapping
-function renderWithProviders(ui: React.ReactElement) {
-  return render(
+const renderWithProviders = (ui: React.ReactElement) =>
+  render(
     <QueryClientProvider client={new QueryClient()}>
       <I18nProvider>
         {ui}
       </I18nProvider>
     </QueryClientProvider>
   )
-}
 ```
 
 ---
