@@ -6,6 +6,7 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 
 | 스킬 | 설명 | 트리거 예시 |
 | ---- | ---- | ----------- |
+| [react-package](#react-package) | 독립 React/TypeScript 프로젝트 컨벤션 (컴포넌트, 훅, Zustand, 성능 최적화) | "컴포넌트 만들어줘", "훅 작성해줘", "Zustand 써줘", "리렌더링 줄여줘" |
 | [nextjs-app-router](#nextjs-app-router) | Next.js 16 App Router 컨벤션 (RSC, Suspense, Hydration, 도메인 구조) | "페이지 만들어줘", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense" |
 | [turborepo-workspace](#turborepo-workspace) | Turborepo + pnpm 모노레포 구조, 공통 패키지, CI/CD, Dockerfile | "모노레포 설정해줘", "새 패키지 추가", "CI 설정해줘", "도커파일" |
 | [web-accessibility](#web-accessibility) | 시맨틱 HTML, ARIA, 키보드/포커스, 색상 대비 적용 + Lighthouse·axe-core로 점수 측정 | "접근성 확인해줘", "aria-label", "키보드 내비게이션", "WCAG" |
@@ -26,6 +27,14 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 | [verification-before-completion](#verification-before-completion) | 완료 선언 전 검증 명령 실행 후 증거 확인 | 완료/커밋/PR 생성 전 |
 | [subagent-driven-development](#subagent-driven-development) | 태스크별 서브에이전트 디스패치 + 스펙·품질 2단계 리뷰 | 구현 계획 실행 시 (서브에이전트 가능한 환경) |
 | [using-git-worktrees](#using-git-worktrees) | 격리된 워크트리 생성 후 클린 베이스라인 확인 | 피처 작업 시작 전, 계획 실행 전 |
+
+---
+
+## react-package
+
+Next.js가 아닌 독립 React/TypeScript 프로젝트에서 사용한다. TypeScript 컨벤션, 컴포넌트 패턴, React Compiler 최적화, Zustand 상태 관리(도메인별 separate store), TanStack Query 커스텀 훅 래핑을 다룬다.
+
+**트리거**: "컴포넌트 만들어줘", "훅 작성해줘", "Zustand 써줘", "리렌더링 줄여줘", "성능 개선해줘", "React 코드 리뷰해줘" 등 독립 React 프로젝트의 모든 작업. Next.js라면 `nextjs-app-router` 스킬을 사용한다.
 
 ---
 
