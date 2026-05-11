@@ -16,6 +16,16 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 | [error-handling](#error-handling) | API 에러(status 기반)와 UI 에러(Error Boundary) 분리 처리 | "에러 처리해줘", "Error Boundary", "toast 알림", "401 처리" |
 | [web-performance](#web-performance) | Lighthouse 기반 성능 점검 및 최적화 | "성능 확인해줘", "lighthouse 돌려줘", "LCP 개선" |
 | [lint-prettier-setup](#lint-prettier-setup) | ESLint + Prettier + Husky 설정을 프로젝트 표준에 맞게 세팅. 단일 프로젝트 및 monorepo 지원 | "lint 설정해줘", "eslint 추가해줘", "새 패키지 설정", "husky 설정" |
+| [brainstorming](#brainstorming) | 구현 전 요구사항·설계 탐색, 2-3가지 접근법 제시, 스펙 문서 작성 | 새 기능 만들기 전, 설계 논의, "어떻게 구현할지" |
+| [writing-plans](#writing-plans) | 스펙을 바탕으로 파일별·단계별 구현 계획 문서 작성 | 스펙 완성 후 구현 전, 멀티스텝 작업 |
+| [executing-plans](#executing-plans) | 작성된 계획을 순서대로 실행, 블로커 발생 시 중단 | 계획 파일이 있을 때 실행 시작 |
+| [test-driven-development](#test-driven-development) | Red→Green→Refactor TDD 사이클 강제 | 기능/버그픽스 구현 전 |
+| [systematic-debugging](#systematic-debugging) | 근본 원인 분석 → 가설 → 단일 수정 4단계 디버깅 | 버그, 테스트 실패, 예상치 못한 동작 발생 시 |
+| [requesting-code-review](#requesting-code-review) | 코드 리뷰어 서브에이전트 디스패치 | 태스크 완료 후, 머지 전 |
+| [receiving-code-review](#receiving-code-review) | 리뷰 피드백을 기술적으로 검증하고 반영 | 코드 리뷰 피드백을 받았을 때 |
+| [verification-before-completion](#verification-before-completion) | 완료 선언 전 검증 명령 실행 후 증거 확인 | 완료/커밋/PR 생성 전 |
+| [subagent-driven-development](#subagent-driven-development) | 태스크별 서브에이전트 디스패치 + 스펙·품질 2단계 리뷰 | 구현 계획 실행 시 (서브에이전트 가능한 환경) |
+| [using-git-worktrees](#using-git-worktrees) | 격리된 워크트리 생성 후 클린 베이스라인 확인 | 피처 작업 시작 전, 계획 실행 전 |
 
 ---
 
@@ -83,3 +93,83 @@ Lighthouse를 실행해 성능 지표(LCP, CLS, FID, TBT)를 측정하고 개선
 새 프로젝트 또는 새 패키지/앱을 추가할 때 ESLint와 Prettier 설정을 이 프로젝트의 표준에 맞게 세팅한다. 단일 프로젝트와 monorepo(Turborepo/pnpm) 모두 지원하며, Husky pre-commit 훅도 설정할 수 있다.
 
 **트리거**: "lint 설정해줘", "eslint 추가해줘", "prettier 설정", "새 패키지 설정", "프로젝트 초기 세팅", "새 앱 추가", "코드 품질 설정", "pre-commit 설정", "husky 설정".
+
+---
+
+## brainstorming
+
+구현 전에 요구사항과 설계를 탐색한다. 프로젝트 맥락을 파악하고 질문을 통해 아이디어를 구체화한 뒤, 2-3가지 접근법을 제시하고 스펙 문서를 작성한다. 스펙 승인 후 `writing-plans` 스킬로 이어진다.
+
+**트리거**: 새 기능 추가 전, 컴포넌트 설계 논의, "어떻게 구현할지", "뭘 만들어야 할지" 등 구현 이전 설계 단계.
+
+---
+
+## writing-plans
+
+스펙을 바탕으로 엔지니어가 바로 실행할 수 있는 단계별 구현 계획 문서를 작성한다. 수정할 파일, 실제 코드, 실행 명령어, 예상 출력까지 포함한다. TDD 워크플로를 기본으로 한다.
+
+**트리거**: 스펙 또는 요구사항이 있는 멀티스텝 작업 시작 전.
+
+---
+
+## executing-plans
+
+작성된 구현 계획 파일을 로드하고 태스크를 순서대로 실행한다. 블로커 발생 시 즉시 중단하고 질문한다. 모든 태스크 완료 후 `finishing-a-development-branch`로 마무리한다.
+
+**트리거**: 계획 파일이 있고 실행을 시작할 때.
+
+---
+
+## test-driven-development
+
+테스트 먼저 작성하고, 실패를 확인하고, 최소 구현으로 통과시킨 뒤 리팩터링한다. 프로덕션 코드는 실패하는 테스트 없이 작성하지 않는다.
+
+**트리거**: 새 기능 구현, 버그 수정, 리팩터링 전 언제나.
+
+---
+
+## systematic-debugging
+
+무작위 수정 대신 근본 원인을 먼저 찾는다. 에러 분석 → 패턴 파악 → 단일 가설 검증 → 수정의 4단계를 따른다. 3번 이상 실패하면 아키텍처를 의심한다.
+
+**트리거**: 버그 발생, 테스트 실패, 예상치 못한 동작, 빌드 실패 등 모든 기술적 문제.
+
+---
+
+## requesting-code-review
+
+코드 리뷰어 서브에이전트를 디스패치해 작업 결과를 검증한다. git SHA 범위를 기준으로 리뷰를 요청하고 피드백을 반영한다.
+
+**트리거**: 태스크 완료 후, 머지 전, 복잡한 버그 수정 후.
+
+---
+
+## receiving-code-review
+
+리뷰 피드백을 감정적으로 수용하지 않고 기술적으로 검증한다. 불명확한 항목은 먼저 질문하고, YAGNI 원칙으로 불필요한 기능 추가를 거부한다. 항목별로 하나씩 구현하고 테스트한다.
+
+**트리거**: 코드 리뷰 피드백을 받았을 때.
+
+---
+
+## verification-before-completion
+
+완료를 선언하기 전에 반드시 검증 명령을 실행하고 결과를 확인한다. "아마 통과할 것", "이미 확인했음" 같은 가정으로 완료 선언 금지.
+
+**트리거**: 완료 선언, 커밋, PR 생성, 다음 태스크로 이동 전 언제나.
+
+---
+
+## subagent-driven-development
+
+구현 계획의 각 태스크를 독립적인 서브에이전트에 위임한다. 태스크별로 스펙 준수 리뷰 → 코드 품질 리뷰 2단계를 거친다. 인간 파트너 개입 없이 모든 태스크를 연속 실행한다.
+
+**트리거**: 구현 계획이 있고 서브에이전트를 사용할 수 있는 환경에서 실행할 때.
+
+---
+
+## using-git-worktrees
+
+피처 작업 전에 격리된 워크트리를 생성한다. 이미 격리된 환경이면 생성을 건너뛴다. 워크트리 생성 후 의존성 설치와 클린 베이스라인 테스트를 실행한다.
+
+**트리거**: 피처 작업 시작 전, 구현 계획 실행 전.
