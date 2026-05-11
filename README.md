@@ -6,7 +6,9 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 
 | 스킬 | 설명 | 트리거 예시 |
 | ---- | ---- | ----------- |
-| [turbo-nextjs](#turbo-nextjs) | Turborepo + Next.js 16 모노레포 아키텍처 컨벤션 적용 | "컴포넌트 추가해줘", "페이지 만들어줘", "훅 작성해줘" |
+| [nextjs-app-router](#nextjs-app-router) | Next.js 16 App Router 컨벤션 (RSC, Suspense, Hydration, 도메인 구조) | "페이지 만들어줘", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense" |
+| [turborepo-workspace](#turborepo-workspace) | Turborepo + pnpm 모노레포 구조, 공통 패키지, CI/CD, Dockerfile | "모노레포 설정해줘", "새 패키지 추가", "CI 설정해줘", "도커파일" |
+| [web-accessibility](#web-accessibility) | 시맨틱 HTML, ARIA, 키보드/포커스, 색상 대비 적용 + Lighthouse·axe-core로 점수 측정 | "접근성 확인해줘", "aria-label", "키보드 내비게이션", "WCAG" |
 | [css-layers](#css-layers) | CSS Cascade Layers 기반 스타일 관리 | "CSS 추가해줘", "스타일 수정해줘", "다크모드 색상", "globals.css" |
 | [design-system](#design-system) | 디자인 시스템 구축 및 프로젝트 적용 | "디자인 시스템 만들어줘", "톤앤매너 잡아줘", "디자인 입혀줘" |
 | [frontend-testing](#frontend-testing) | Vitest 기반 UI 테스트 / 유닛 테스트 작성 | "테스트 작성해줘", "컴포넌트 테스트", "훅 테스트" |
@@ -17,11 +19,27 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 
 ---
 
-## turbo-nextjs
+## nextjs-app-router
 
-Turborepo + Next.js 16 모노레포에서 코드를 작성하거나 수정할 때 사용한다. 아키텍처 컨벤션, TypeScript 규칙, import 경로, TDD 워크플로를 강제한다.
+Next.js 16 App Router 기반 코드를 작성하거나 수정할 때 사용한다. Server/Client Component 경계, Suspense 스트리밍, Hydration 패턴, 도메인 기반 폴더 구조, TypeScript 컨벤션, TDD 워크플로를 적용한다.
 
-**트리거**: `apps/` 또는 `packages/` 안의 파일을 추가·수정하는 모든 작업. "컴포넌트 만들어줘", "페이지 추가", "훅 작성", "리팩터링", "테스트 작성" 등.
+**트리거**: `src/` 내부 파일을 추가·수정하는 모든 작업. "페이지 만들어줘", "컴포넌트 추가", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense", "하이드레이션 에러", "API 라우트" 등. Turborepo 모노레포라면 `turborepo-workspace` 스킬도 함께 사용한다.
+
+---
+
+## turborepo-workspace
+
+Turborepo + pnpm 모노레포 구조를 설정하거나 관리할 때 사용한다. `packages/` 아래 공통 패키지(ui, utils, styles, tsconfig, eslint-config, prettier-config) 구성, turbo.json 파이프라인, 프로젝트별 명령어, GitHub Actions CI/CD, Dockerfile(turbo prune 기반 멀티 스테이지)을 다룬다.
+
+**트리거**: "모노레포 설정해줘", "새 패키지 추가", "공통 설정 만들어줘", "CI 설정해줘", "도커파일 만들어줘", "@repo/ui", "pnpm workspace" 등 모노레포 루트 또는 `packages/` 관련 작업.
+
+---
+
+## web-accessibility
+
+웹 접근성(a11y) 관련 작업에 사용한다. 시맨틱 HTML, ARIA 레이블·상태, 키보드 내비게이션, 포커스 관리(트랩 포함), 색상 대비, 스크린 리더 지원, heading 계층을 다룬다.
+
+**트리거**: "접근성 확인해줘", "a11y 개선", "스크린 리더", "키보드 내비게이션", "aria-label", "포커스 관리", "색상 대비", "WCAG" 등 접근성 관련 모든 작업.
 
 ---
 
