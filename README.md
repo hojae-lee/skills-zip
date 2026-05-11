@@ -6,6 +6,7 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 
 | 스킬                                                              | 설명                                                                                       | 트리거 예시                                                           |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| [git-commit-convention](#git-commit-convention)                   | feat/fix/refactor 등 커밋 타입 선택 기준과 메시지 형식                                     | "커밋해줘", "커밋 메시지 작성", "어떤 타입 써야 해", "feat이야 fix야"  |
 | [react-package](#react-package)                                   | 독립 React/TypeScript 프로젝트 컨벤션 (컴포넌트, 훅, Zustand, 성능 최적화)                 | "컴포넌트 만들어줘", "훅 작성해줘", "Zustand 써줘", "리렌더링 줄여줘" |
 | [nextjs-app-router](#nextjs-app-router)                           | Next.js 16 App Router 컨벤션 (RSC, Suspense, Hydration, 도메인 구조)                       | "페이지 만들어줘", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense" |
 | [turborepo-workspace](#turborepo-workspace)                       | Turborepo + pnpm 모노레포 구조, 공통 패키지, CI/CD, Dockerfile                             | "모노레포 설정해줘", "새 패키지 추가", "CI 설정해줘", "도커파일"      |
@@ -27,6 +28,14 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 | [verification-before-completion](#verification-before-completion) | 완료 선언 전 검증 명령 실행 후 증거 확인                                                   | 완료/커밋/PR 생성 전                                                  |
 | [subagent-driven-development](#subagent-driven-development)       | 태스크별 서브에이전트 디스패치 + 스펙·품질 2단계 리뷰                                      | 구현 계획 실행 시 (서브에이전트 가능한 환경)                          |
 | [using-git-worktrees](#using-git-worktrees)                       | 격리된 워크트리 생성 후 클린 베이스라인 확인                                               | 피처 작업 시작 전, 계획 실행 전                                       |
+
+---
+
+## git-commit-convention
+
+커밋 메시지를 작성할 때 타입을 선택하고 형식을 맞춘다. `feat`, `fix`, `refactor`, `docs`, `style`, `test`, `chore`, `perf`, `ci`, `revert` 10가지 타입과 선택 기준을 다룬다.
+
+**트리거**: "커밋해줘", "커밋 메시지 작성해줘", "어떤 타입 써야 해", "feat이야 fix야", "커밋 컨벤션", "git commit" 등 커밋 관련 모든 요청.
 
 ---
 
