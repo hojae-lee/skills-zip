@@ -4,29 +4,29 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 
 ## 스킬 목록
 
-| 스킬 | 설명 | 트리거 예시 |
-| ---- | ---- | ----------- |
-| [react-package](#react-package) | 독립 React/TypeScript 프로젝트 컨벤션 (컴포넌트, 훅, Zustand, 성능 최적화) | "컴포넌트 만들어줘", "훅 작성해줘", "Zustand 써줘", "리렌더링 줄여줘" |
-| [nextjs-app-router](#nextjs-app-router) | Next.js 16 App Router 컨벤션 (RSC, Suspense, Hydration, 도메인 구조) | "페이지 만들어줘", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense" |
-| [turborepo-workspace](#turborepo-workspace) | Turborepo + pnpm 모노레포 구조, 공통 패키지, CI/CD, Dockerfile | "모노레포 설정해줘", "새 패키지 추가", "CI 설정해줘", "도커파일" |
-| [web-accessibility](#web-accessibility) | 시맨틱 HTML, ARIA, 키보드/포커스, 색상 대비 적용 + Lighthouse·axe-core로 점수 측정 | "접근성 확인해줘", "aria-label", "키보드 내비게이션", "WCAG" |
-| [css-layers](#css-layers) | CSS Cascade Layers 기반 스타일 관리 | "CSS 추가해줘", "스타일 수정해줘", "다크모드 색상", "globals.css" |
-| [design-system](#design-system) | 디자인 시스템 구축 및 프로젝트 적용 | "디자인 시스템 만들어줘", "톤앤매너 잡아줘", "디자인 입혀줘" |
-| [frontend-testing](#frontend-testing) | Vitest 기반 UI 테스트 / 유닛 테스트 작성 | "테스트 작성해줘", "컴포넌트 테스트", "훅 테스트" |
-| [api-integration](#api-integration) | TanStack Query + fetch 클라이언트, Query Factory 패턴 | "API 연동해줘", "React Query", "fetch 설정", "인터셉터" |
-| [error-handling](#error-handling) | API 에러(status 기반)와 UI 에러(Error Boundary) 분리 처리 | "에러 처리해줘", "Error Boundary", "toast 알림", "401 처리" |
-| [web-performance](#web-performance) | Lighthouse 기반 성능 점검 및 최적화 | "성능 확인해줘", "lighthouse 돌려줘", "LCP 개선" |
-| [lint-prettier-setup](#lint-prettier-setup) | ESLint + Prettier + Husky 설정을 프로젝트 표준에 맞게 세팅. 단일 프로젝트 및 monorepo 지원 | "lint 설정해줘", "eslint 추가해줘", "새 패키지 설정", "husky 설정" |
-| [brainstorming](#brainstorming) | 구현 전 요구사항·설계 탐색, 2-3가지 접근법 제시, 스펙 문서 작성 | 새 기능 만들기 전, 설계 논의, "어떻게 구현할지" |
-| [writing-plans](#writing-plans) | 스펙을 바탕으로 파일별·단계별 구현 계획 문서 작성 | 스펙 완성 후 구현 전, 멀티스텝 작업 |
-| [executing-plans](#executing-plans) | 작성된 계획을 순서대로 실행, 블로커 발생 시 중단 | 계획 파일이 있을 때 실행 시작 |
-| [test-driven-development](#test-driven-development) | Red→Green→Refactor TDD 사이클 강제 | 기능/버그픽스 구현 전 |
-| [systematic-debugging](#systematic-debugging) | 근본 원인 분석 → 가설 → 단일 수정 4단계 디버깅 | 버그, 테스트 실패, 예상치 못한 동작 발생 시 |
-| [requesting-code-review](#requesting-code-review) | 코드 리뷰어 서브에이전트 디스패치 | 태스크 완료 후, 머지 전 |
-| [receiving-code-review](#receiving-code-review) | 리뷰 피드백을 기술적으로 검증하고 반영 | 코드 리뷰 피드백을 받았을 때 |
-| [verification-before-completion](#verification-before-completion) | 완료 선언 전 검증 명령 실행 후 증거 확인 | 완료/커밋/PR 생성 전 |
-| [subagent-driven-development](#subagent-driven-development) | 태스크별 서브에이전트 디스패치 + 스펙·품질 2단계 리뷰 | 구현 계획 실행 시 (서브에이전트 가능한 환경) |
-| [using-git-worktrees](#using-git-worktrees) | 격리된 워크트리 생성 후 클린 베이스라인 확인 | 피처 작업 시작 전, 계획 실행 전 |
+| 스킬                                                              | 설명                                                                                       | 트리거 예시                                                           |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| [react-package](#react-package)                                   | 독립 React/TypeScript 프로젝트 컨벤션 (컴포넌트, 훅, Zustand, 성능 최적화)                 | "컴포넌트 만들어줘", "훅 작성해줘", "Zustand 써줘", "리렌더링 줄여줘" |
+| [nextjs-app-router](#nextjs-app-router)                           | Next.js 16 App Router 컨벤션 (RSC, Suspense, Hydration, 도메인 구조)                       | "페이지 만들어줘", "서버 컴포넌트", "클라이언트 컴포넌트", "Suspense" |
+| [turborepo-workspace](#turborepo-workspace)                       | Turborepo + pnpm 모노레포 구조, 공통 패키지, CI/CD, Dockerfile                             | "모노레포 설정해줘", "새 패키지 추가", "CI 설정해줘", "도커파일"      |
+| [web-accessibility](#web-accessibility)                           | 시맨틱 HTML, ARIA, 키보드/포커스, 색상 대비 적용 + Lighthouse·axe-core로 점수 측정         | "접근성 확인해줘", "aria-label", "키보드 내비게이션", "WCAG"          |
+| [css-layers](#css-layers)                                         | CSS Cascade Layers 기반 스타일 관리                                                        | "CSS 추가해줘", "스타일 수정해줘", "다크모드 색상", "globals.css"     |
+| [design-system](#design-system)                                   | 디자인 시스템 구축 및 프로젝트 적용                                                        | "디자인 시스템 만들어줘", "톤앤매너 잡아줘", "디자인 입혀줘"          |
+| [frontend-testing](#frontend-testing)                             | Vitest 기반 UI 테스트 / 유닛 테스트 작성                                                   | "테스트 작성해줘", "컴포넌트 테스트", "훅 테스트"                     |
+| [api-integration](#api-integration)                               | TanStack Query + fetch 클라이언트, Query Factory 패턴                                      | "API 연동해줘", "React Query", "fetch 설정", "인터셉터"               |
+| [error-handling](#error-handling)                                 | API 에러(status 기반)와 UI 에러(Error Boundary) 분리 처리                                  | "에러 처리해줘", "Error Boundary", "toast 알림", "401 처리"           |
+| [web-performance](#web-performance)                               | Lighthouse 기반 성능 점검 및 최적화                                                        | "성능 확인해줘", "lighthouse 돌려줘", "LCP 개선"                      |
+| [lint-prettier-setup](#lint-prettier-setup)                       | ESLint + Prettier + Husky 설정을 프로젝트 표준에 맞게 세팅. 단일 프로젝트 및 monorepo 지원 | "lint 설정해줘", "eslint 추가해줘", "새 패키지 설정", "husky 설정"    |
+| [brainstorming](#brainstorming)                                   | 구현 전 요구사항·설계 탐색, 2-3가지 접근법 제시, 스펙 문서 작성                            | 새 기능 만들기 전, 설계 논의, "어떻게 구현할지"                       |
+| [writing-plans](#writing-plans)                                   | 스펙을 바탕으로 파일별·단계별 구현 계획 문서 작성                                          | 스펙 완성 후 구현 전, 멀티스텝 작업                                   |
+| [executing-plans](#executing-plans)                               | 작성된 계획을 순서대로 실행, 블로커 발생 시 중단                                           | 계획 파일이 있을 때 실행 시작                                         |
+| [test-driven-development](#test-driven-development)               | Red→Green→Refactor TDD 사이클 강제                                                         | 기능/버그픽스 구현 전                                                 |
+| [systematic-debugging](#systematic-debugging)                     | 근본 원인 분석 → 가설 → 단일 수정 4단계 디버깅                                             | 버그, 테스트 실패, 예상치 못한 동작 발생 시                           |
+| [requesting-code-review](#requesting-code-review)                 | 코드 리뷰어 서브에이전트 디스패치                                                          | 태스크 완료 후, 머지 전                                               |
+| [receiving-code-review](#receiving-code-review)                   | 리뷰 피드백을 기술적으로 검증하고 반영                                                     | 코드 리뷰 피드백을 받았을 때                                          |
+| [verification-before-completion](#verification-before-completion) | 완료 선언 전 검증 명령 실행 후 증거 확인                                                   | 완료/커밋/PR 생성 전                                                  |
+| [subagent-driven-development](#subagent-driven-development)       | 태스크별 서브에이전트 디스패치 + 스펙·품질 2단계 리뷰                                      | 구현 계획 실행 시 (서브에이전트 가능한 환경)                          |
+| [using-git-worktrees](#using-git-worktrees)                       | 격리된 워크트리 생성 후 클린 베이스라인 확인                                               | 피처 작업 시작 전, 계획 실행 전                                       |
 
 ---
 
@@ -84,6 +84,13 @@ Design.md 유무에 따라 두 가지 모드로 동작한다.
 ## frontend-testing
 
 Vitest + React Testing Library 기반 테스트를 작성한다. UI 테스트(컴포넌트)와 유닛 테스트(함수·훅)를 구분하고, 테스트 환경이 이미 설정돼 있으면 기존 패턴을 그대로 따른다. 테스트가 불필요한 단순 컴포넌트는 작성하지 않는다.
+
+**`test-driven-development`와 역할 분리**:
+
+- `test-driven-development` → **기본 원칙** (언제, 어떤 순서로 — Red-Green-Refactor 사이클)
+- `frontend-testing` → **규격** (어떻게 쓸지 — Vitest/RTL 패턴, 파일 구조, 쿼리 우선순위)
+
+기능 구현 시 두 스킬을 함께 사용한다. `test-driven-development`가 사이클을 정의하고, 실제 테스트 코드는 이 스킬의 패턴을 따른다.
 
 **트리거**: "테스트 작성해줘", "test 추가", "컴포넌트 테스트", "훅 테스트", "spec 작성" 등 테스트 관련 모든 요청.
 
