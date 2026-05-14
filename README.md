@@ -14,7 +14,7 @@ Claude Code 커스텀 스킬 모음입니다. `.claude/skills/` 아래에 위치
 | [web-accessibility](#web-accessibility)         | 시맨틱 HTML, ARIA, 키보드/포커스, 색상 대비 적용 + Lighthouse·axe-core로 점수 측정         | "접근성 확인해줘", "aria-label", "키보드 내비게이션", "WCAG"          |
 | [css-layers](#css-layers)                       | CSS Cascade Layers 기반 스타일 관리                                                        | "CSS 추가해줘", "스타일 수정해줘", "다크모드 색상", "globals.css"     |
 | [design-system](#design-system)                 | 디자인 시스템 구축 및 프로젝트 적용                                                        | "디자인 시스템 만들어줘", "톤앤매너 잡아줘", "디자인 입혀줘"          |
-| [frontend-testing](#frontend-testing)           | Vitest 기반 UI 테스트 / 유닛 테스트 작성                                                   | "테스트 작성해줘", "컴포넌트 테스트", "훅 테스트"                     |
+| [frontend-test](#frontend-test)                 | Vitest 기반 UI 테스트 / 유닛 테스트 작성                                                   | "테스트 작성해줘", "컴포넌트 테스트", "훅 테스트"                     |
 | [api-integration](#api-integration)             | TanStack Query + fetch 클라이언트, Query Factory 패턴                                      | "API 연동해줘", "React Query", "fetch 설정", "인터셉터"               |
 | [error-handling](#error-handling)               | API 에러(status 기반)와 UI 에러(Error Boundary) 분리 처리                                  | "에러 처리해줘", "Error Boundary", "toast 알림", "401 처리"           |
 | [web-performance](#web-performance)             | Lighthouse 기반 성능 점검 및 최적화                                                        | "성능 확인해줘", "lighthouse 돌려줘", "LCP 개선"                      |
@@ -92,11 +92,11 @@ Design.md 유무에 따라 두 가지 모드로 동작한다.
 
 ---
 
-## frontend-testing
+## frontend-test
 
-Vitest + React Testing Library 기반 테스트를 작성한다. UI 테스트(컴포넌트)와 유닛 테스트(함수·훅)를 구분하고, 테스트 환경이 이미 설정돼 있으면 기존 패턴을 그대로 따른다. 테스트가 불필요한 단순 컴포넌트는 작성하지 않는다.
+Vitest + React Testing Library 기반 테스트를 작성한다. UI 테스트(컴포넌트)와 유닛 테스트(함수·훅)를 구분하고, react-i18next, framer-motion, Zustand, React Router, TanStack Query 등 주요 라이브러리 mock 패턴을 포함한다.
 
-**트리거**: "테스트 작성해줘", "test 추가", "컴포넌트 테스트", "훅 테스트", "spec 작성" 등 테스트 관련 모든 요청.
+**트리거**: "테스트 작성해줘", "테스트 만들어줘", "컴포넌트 테스트", "훅 테스트", "unit test", "ui test" 등 테스트 관련 모든 요청.
 
 ---
 
